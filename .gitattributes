@@ -6,5 +6,6 @@
 *.cshtml linguist-detectable=false
 *.aspx linguist-detectable=false
 *.csharp linguist-detectable=false  
+*.scss linguist-detectable=false
 
 
