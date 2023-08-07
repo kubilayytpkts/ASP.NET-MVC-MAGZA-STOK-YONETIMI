@@ -1,0 +1,31 @@
+﻿@model StokUygulamasıMVC.Models.Entity.MUSTERILER
+@{
+    ViewBag.Title = "YeniMüsteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Müşteri Ad</label>
+        @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERIAD, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Müşteri Soyad</label>
+        @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERISOYAD, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button id="btnMusteriEkle" class="btn btn-info">Müşteri ekle</button>
+    </div>
+    <script>
+        $('#btnMusteriEkle').click(function () {
+            var url = " MVC Stok uygulaması"
+            alert('Müşteri Ekleme başarılı' + url);
+        });
+    </script>
+</form>
+
+
+
+

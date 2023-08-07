@@ -1,0 +1,30 @@
+﻿@model StokUygulamasıMVC.Models.Entity.URUNLER
+@{
+    ViewBag.Title = "UrunGuncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UrunGuncelle", "Urunler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.URUNID)
+        @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control", @required = "required" })
+        <br />
+        @Html.LabelFor(m => m.URUNAD)
+        @Html.TextBoxFor(m => m.URUNAD, new { @class = "form-control", @required = "required" })
+        <br />
+        @Html.LabelFor(m => m.MARKA)
+        @Html.TextBoxFor(m => m.MARKA, new { @class = "form-control", @required = "required" })
+        <br />
+        @Html.LabelFor(m => m.URUNKATEGORI)
+        @Html.DropDownListFor(m => m.KATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.kategori, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.FIYAT)
+        @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control", @required = "required" })
+        <br />
+        @Html.LabelFor(m => m.STOK)
+        @Html.TextBoxFor(m => m.STOK, new { @class = "form-control", @required = "required" })
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+
+}

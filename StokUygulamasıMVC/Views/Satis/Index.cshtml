@@ -1,0 +1,37 @@
+﻿@model StokUygulamasıMVC.Models.Entity.SATISLAR
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Satış yap
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Satış Yapma Ekranı</h2>
+            </div>
+            <form method="post" action="~/Satis/YeniSatis">
+                <div class="modal-body">
+                    <br />
+                    <label>Ürün Adı</label>
+                    @Html.TextBoxFor(m => m.URUN, new { @class = "form-control" })
+                    <br />
+                    <label>Müşteri</label>
+                    @Html.TextBoxFor(m=>m.MUSTERI, new {@class="form-control" })
+                    <br />
+                    <label>Satılan Adet</label>
+                    @Html.TextBoxFor(m => m.ADET, new { @class = "form-control" })
+                    <br />
+                    <label>Fiyat</label>
+                    @Html.TextBoxFor(m => m.FİYAT, new { @class = "form-control" })
+                    <br />
+                    <button class="btn btn-info">Satış Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

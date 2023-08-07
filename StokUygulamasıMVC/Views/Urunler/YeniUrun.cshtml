@@ -1,0 +1,37 @@
+﻿@model StokUygulamasıMVC.Models.Entity.URUNLER
+
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Ürün Ad</label>
+        @Html.TextBoxFor(m => m.URUNAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.URUNAD, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Marka</label>
+        @Html.TextBoxFor(m => m.MARKA, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MARKA, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Kategori</label>
+        @Html.DropDownListFor(c => c.KATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.kategori, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Fiyat</label>
+        @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FIYAT, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Stok</label>
+        @Html.TextBoxFor(m => m.STOK, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.STOK, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <button class="btn btn-info">Ürün ekle</button>
+    </div>
+</form>
+
